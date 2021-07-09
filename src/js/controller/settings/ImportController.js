@@ -14,16 +14,17 @@
     this.hiddenOpenPiskelInput = document.querySelector('[name="open-piskel-input"]');
 
     this.addEventListener('.browse-local-button', 'click', this.onBrowseLocalClick_);
+    this.addEventListener('.browse-nfts-button', 'click', this.onBrowseNFTsClick_);
     this.addEventListener('.browse-backups-button', 'click', this.onBrowseBackupsClick_);
     this.addEventListener('.file-input-button', 'click', this.onFileInputClick_);
 
     // different handlers, depending on the Environment
-    if (pskl.utils.Environment.detectNodeWebkit()) {
-      this.addEventListener('.open-piskel-button', 'click', this.openPiskelDesktop_);
-    } else {
-      this.addEventListener(this.hiddenOpenPiskelInput, 'change', this.onOpenPiskelChange_);
-      this.addEventListener('.open-piskel-button', 'click', this.onOpenPiskelClick_);
-    }
+    // if (pskl.utils.Environment.detectNodeWebkit()) {
+    //   this.addEventListener('.open-piskel-button', 'click', this.openPiskelDesktop_);
+    // } else {
+    //   this.addEventListener(this.hiddenOpenPiskelInput, 'change', this.onOpenPiskelChange_);
+    //   this.addEventListener('.open-piskel-button', 'click', this.onOpenPiskelClick_);
+    // }
   };
 
   ns.ImportController.prototype.closeDrawer_ = function () {
@@ -56,6 +57,13 @@
   ns.ImportController.prototype.onBrowseLocalClick_ = function (evt) {
     $.publish(Events.DIALOG_SHOW, {
       dialogId : 'browse-local'
+    });
+    this.closeDrawer_();
+  };
+
+  ns.ImportController.prototype.onBrowseNFTsClick_ = function (evt) {
+    $.publish(Events.DIALOG_SHOW, {
+      dialogId : 'browse-nfts'
     });
     this.closeDrawer_();
   };

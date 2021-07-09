@@ -7,9 +7,21 @@
   "js/lib/pubsub.js",
   "js/lib/bootstrap/bootstrap.js",
 
+  "js/lib/ethers/ethers-5.4.1-umd.js",
+
+  "js/lib/lz-string/lz-string.min.js",
+  "js/lib/lz-string/base64-string.js",
+
   // Application wide configuration
   "js/Constants.js",
   "js/Events.js",
+
+  "js/abi/IERC1155.js",
+  "js/abi/INFTComplexGemPoolData.js",
+  "js/abi/INFTComplexGemPool.js",
+  "js/abi/INFTGemGovernor.js",
+  "js/abi/INFTGemMultiToken.js",
+  "js/abi/INiftyPixContract.js",
 
   // Libraries
   "js/utils/core.js",
@@ -48,7 +60,7 @@
   "js/utils/serialization/backward/Deserializer_v0.js",
   "js/utils/serialization/backward/Deserializer_v1.js",
 
-    // GIF Encoding libraries
+  // GIF Encoding libraries
   "js/lib/gif/gif.worker.js",
   "js/lib/gif/gif.js",
   "js/lib/gif/libgif.js",
@@ -149,6 +161,7 @@
   "js/controller/dialogs/AbstractDialogController.js",
   "js/controller/dialogs/CreatePaletteController.js",
   "js/controller/dialogs/BrowseLocalController.js",
+  "js/controller/dialogs/BrowseNFTsController.js",
   "js/controller/dialogs/CheatsheetController.js",
   "js/controller/dialogs/backups/steps/SelectSession.js",
   "js/controller/dialogs/backups/steps/SessionDetails.js",
@@ -183,6 +196,7 @@
   "js/service/storage/LocalStorageService.js",
   "js/service/storage/GalleryStorageService.js",
   "js/service/storage/DesktopStorageService.js",
+  "js/service/storage/NFTStorageService.js",
   "js/service/BackupService.js",
   "js/service/BeforeUnloadService.js",
   "js/service/HistoryService.js",
@@ -267,5 +281,5 @@
   "js/app.js",
 
   // Bonus features !!
-  "js/snippets.js"
+  "js/snippets.js",
 ];

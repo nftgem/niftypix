@@ -21,7 +21,7 @@ if (args.debug) console.log(args);
 
 // Ensure a path for the src file was passed
 if (!args._ || (args._ && !args._.length)) {
-  console.error('Path to a .piskel file is required');
+  console.error('Path to a .npx file is required');
 
   return;
 }
@@ -35,21 +35,21 @@ if (!fs.existsSync(src)) {
   return;
 }
 
-// Read src piskel file
+// Read src npx file
 const piskelFile = fs.readFileSync(src, 'utf-8');
 
-const dest = args.dest || path.basename(src, '.piskel');
+const dest = args.dest || path.basename(src, '.npx');
 
-console.log('Piskel CLI is exporting...');
+console.log('NiftyPix CLI is exporting...');
 
-// Get path to Piskel's app js bundle
+// Get path to NiftyPix's app js bundle
 let piskelAppJsDir = path.resolve(__dirname +'/../dest/prod/js/');
 let minJsFiles = fs.readdirSync(piskelAppJsDir).filter(filename => filename.indexOf('min') > -1);
 let piskelAppJsFileName = minJsFiles[0];
 let piskelAppJsPath = (piskelAppJsFileName) ? path.join(piskelAppJsDir, piskelAppJsFileName) : '';
 
 if (!fs.existsSync(piskelAppJsPath)) {
-  console.error(`Piskel's application JS file not found in: ${piskelAppJsDir}. Run prod build and try again.`);
+  console.error(`NiftyPix's application JS file not found in: ${piskelAppJsDir}. Run prod build and try again.`);
 
   return;
 }

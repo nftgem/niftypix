@@ -1,7 +1,7 @@
 (function () {
   var ns = $.namespace('pskl.controller.preview');
 
-  var POPUP_TITLE = 'Piskel - preview';
+  var POPUP_TITLE = 'NiftyPix - preview';
 
   ns.PopupPreviewController = function (piskelController) {
     this.piskelController = piskelController;

@@ -14,6 +14,10 @@
       template : 'templates/dialogs/browse-local.html',
       controller : ns.BrowseLocalController
     },
+    'browse-nfts' : {
+      template : 'templates/dialogs/browse-nfts.html',
+      controller : ns.BrowseNFTsController
+    },
     'import' : {
       template : 'templates/dialogs/import.html',
       controller : ns.importwizard.ImportWizard

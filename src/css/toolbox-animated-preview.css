@@ -125,7 +125,7 @@
 }
 
 /**
- * If the icon represents an enabled state, the border should always be gold.
+ * If the icon represents an enabled state, the border should always be magenta.
  */
 .preview-contextual-action-enabled {
   color: var(--highlight-color);
@@ -177,8 +177,8 @@
 
 .preview-drop-down .size-button-selected {
   opacity: 1;
-  color: gold;
-  border-color: gold;
+  color: magenta;
+  border-color: magenta;
   z-index: 5;
 }
 
@@ -196,7 +196,7 @@
  * The regular image is provided by the sprite icons.png+icons.css
  */
 .icon-minimap-popup-preview-arrow-white:hover {
-  background-image: url(../img/icons/minimap/minimap-popup-preview-arrow-gold.png);
+  background-image: url(../img/icons/minimap/minimap-popup-preview-arrow-magenta.png);
   background-position: 0 0;
   background-size: 18px 18px;
 }
@@ -204,6 +204,6 @@
 @media (-webkit-min-device-pixel-ratio: 2),
        (min-resolution: 192dpi) {
   .icon-minimap-popup-preview-arrow-white:hover {
-    background-image: url(../img/icons/minimap/minimap-popup-preview-arrow-gold@2x.png);
+    background-image: url(../img/icons/minimap/minimap-popup-preview-arrow-magenta@2x.png);
   }
 }

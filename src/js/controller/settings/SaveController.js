@@ -6,6 +6,7 @@
     GALLERY : 'save-gallery-partial',
     GALLERY_UNAVAILABLE : 'save-gallery-unavailable-partial',
     LOCALSTORAGE : 'save-localstorage-partial',
+    NFT : 'save-nft-partial',
     FILEDOWNLOAD : 'save-file-download-partial'
   };
 
@@ -33,12 +34,14 @@
     this.saveDesktopButton = document.querySelector('#save-desktop-button');
     this.saveDesktopAsNewButton = document.querySelector('#save-desktop-as-new-button');
     this.saveFileDownloadButton = document.querySelector('#save-file-download-button');
+    this.saveNFTButton = document.querySelector('#save-nft-button');
 
     this.safeAddEventListener_(this.saveLocalStorageButton, 'click', this.saveToIndexedDb_);
     this.safeAddEventListener_(this.saveGalleryButton, 'click', this.saveToGallery_);
     this.safeAddEventListener_(this.saveDesktopButton, 'click', this.saveToDesktop_);
     this.safeAddEventListener_(this.saveDesktopAsNewButton, 'click', this.saveToDesktopAsNew_);
     this.safeAddEventListener_(this.saveFileDownloadButton, 'click', this.saveToFileDownload_);
+    this.safeAddEventListener_(this.saveNFTButton, 'click', this.saveToNFT_);
 
     this.addEventListener(this.saveForm, 'submit', this.onSaveFormSubmit_);
 
@@ -68,14 +71,14 @@
 
   ns.SaveController.prototype.getPartials_ = function () {
     if (pskl.utils.Environment.detectNodeWebkit()) {
-      return [PARTIALS.DESKTOP, PARTIALS.LOCALSTORAGE, PARTIALS.GALLERY_UNAVAILABLE];
+      return [PARTIALS.DESKTOP, PARTIALS.LOCALSTORAGE];
     }
 
     if (pskl.app.isLoggedIn()) {
-      return [PARTIALS.GALLERY, PARTIALS.LOCALSTORAGE, PARTIALS.FILEDOWNLOAD];
+      return [PARTIALS.GALLERY, PARTIALS.LOCALSTORAGE];
     }
 
-    return [PARTIALS.FILEDOWNLOAD, PARTIALS.LOCALSTORAGE, PARTIALS.GALLERY_UNAVAILABLE];
+    return [PARTIALS.NFT,PARTIALS.LOCALSTORAGE];
   };
 
   ns.SaveController.prototype.updateDescriptorInputs_ = function (evt) {
@@ -123,6 +126,10 @@
     this.saveTo_('saveToDesktop', true);
   };
 
+  ns.SaveController.prototype.saveToNFT_ = function () {
+    this.saveTo_('saveToNFT', true);
+  };
+
   ns.SaveController.prototype.saveTo_ = function (methodName, saveAsNew) {
     var piskel = this.piskelController.getPiskel();
     piskel.setDescriptor(this.getDescriptor_());
@@ -151,6 +158,7 @@
     this.setDisabled_(this.saveLocalStorageButton, true);
     this.setDisabled_(this.saveGalleryButton, true);
     this.setDisabled_(this.saveDesktopButton, true);
+    this.setDisabled_(this.saveNFTButton, true);
     this.setDisabled_(this.saveDesktopAsNewButton, true);
     this.setDisabled_(this.saveFileDownloadButton, true);
   };
@@ -159,6 +167,7 @@
     this.setDisabled_(this.saveLocalStorageButton, false);
     this.setDisabled_(this.saveGalleryButton, false);
     this.setDisabled_(this.saveDesktopButton, false);
+    this.setDisabled_(this.saveNFTButton, false);
     this.setDisabled_(this.saveDesktopAsNewButton, false);
     this.setDisabled_(this.saveFileDownloadButton, false);
   };

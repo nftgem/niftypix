@@ -132,7 +132,7 @@
 }
 
 .grid-colors-item.selected {
-  border-color: gold;
+  border-color: magenta;
 }
 
 .settings-section-preferences > .settings-title {

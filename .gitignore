@@ -18,6 +18,10 @@ nbproject
 # vscode workspace folder
 .vscode
 
+.history/
+
+yarn.lock
+
 # git stackdumps
 *.stackdump
 
